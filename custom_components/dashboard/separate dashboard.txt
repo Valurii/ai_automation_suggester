@@ -22,7 +22,7 @@ views:
                   Available' else 'All_Good' }}
               - type: entity
                 entity: update.ai_automation_suggester_update
-                name: AI_Suggester
+                name: Fjoelnir AI Suggester
                 icon_color: '{{ ''red'' if is_state(entity,''on'') else ''green'' }}'
               - type: template
                 entity: automation.ai_suggestions_new_entity_detection
