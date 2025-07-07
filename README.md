@@ -382,6 +382,20 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 We welcome contributions! If you have ideas for new features, improvements, bug fixes, or translations, please feel free to open an issue or submit a pull request on the GitHub repository. Please follow standard development practices.
 
+## Development Setup
+
+This project requires **Python 3.11**. Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+The test suite relies on `pytest-homeassistant-custom-component`. Run it with:
+
+```bash
+pytest -q
+```
+
 ---
 
 ## Disclaimer
