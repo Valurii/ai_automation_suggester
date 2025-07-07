@@ -1,15 +1,17 @@
 <p align="center">
-  <a href="https://www.buymeacoffee.com/ITSpecialist" target="_blank">
+  <a href="https://www.buymeacoffee.com/fjoelnir" target="_blank">
     <img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
   </a>
 </p>
 
 # AI Automation Suggester
 
-[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/ITSpecialist111/ai_automation_suggester/hassfest.yaml?style=for-the-badge)]()
-[![HACS Validation](https://img.shields.io/github/actions/workflow/status/ITSpecialist111/ai_automation_suggester/validate.yaml?style=for-the-badge)]()
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ITSpecialist111/ai_automation_suggester?style=for-the-badge)]()
+[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/fjoelnir/ai_automation_suggester/hassfest.yaml?style=for-the-badge)]()
+[![HACS Validation](https://img.shields.io/github/actions/workflow/status/fjoelnir/ai_automation_suggester/validate.yaml?style=for-the-badge)]()
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/fjoelnir/ai_automation_suggester?style=for-the-badge)]()
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)]()
+
+Inspired by the original project from ITSpecialist111.
 
 An **AI‑powered assistant** for Home Assistant that leverages large language models to understand your unique smart home environment – your entities, areas, devices, **and** existing automations. It proposes intelligent, actionable YAML suggestions tailored to your specific setup, helping you unlock your home's full potential.
 
@@ -59,21 +61,21 @@ Randomized entity selection (configurable) helps ensure each analysis run can su
 Suggestions are delivered directly within Home Assistant notifications:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ITSpecialist111/ai_automation_suggester/main/Screenshot%202025-01-19%20082247-1.png" alt="Notification example" width="700"/>
+  <img src="Screenshot%202025-01-19%20082247-1.png" alt="Notification example" width="700"/>
   <br><em>AI suggestions delivered right inside Home&nbsp;Assistant</em>
 </p>
 
 You can also build custom dashboard cards to display suggestions using sensor attributes:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ITSpecialist111/ai_automation_suggester/main/Screenshot%202025-01-19%20083200.png" alt="Dashboard card example" width="700"/>
+  <img src="Screenshot%202025-01-19%20083200.png" alt="Dashboard card example" width="700"/>
   <br><em>Dashboard showing human-readable description and extracted YAML block</em>
 </p>
 
 Here's an example of displaying suggestions on a dashboard:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ITSpecialist111/ai_automation_suggester/main/image.png" alt="Example Dashboard Implementation" width="700"/>
+  <img src="image.png" alt="Example Dashboard Implementation" width="700"/>
   <br><em>Example of a dashboard displaying AI-suggested automations</em>
 </p>
 
