@@ -188,6 +188,7 @@ class AIAutomationCoordinator(DataUpdateCoordinator):
         self.area_registry = ar.async_get(self.hass)
 
     async def async_shutdown(self):
+        """Handle cleanup when the integration is unloaded."""
         return
 
     # ---------------------------------------------------------------------
