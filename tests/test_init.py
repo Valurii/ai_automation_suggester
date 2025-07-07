@@ -5,6 +5,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 import pytest
 from homeassistant.config_entries import ConfigEntryState
 from homeassistant.loader import DATA_CUSTOM_COMPONENTS as LOADER_CUSTOM
+from inspect import signature
 from pytest_homeassistant_custom_component.common import (
     MockConfigEntry,
     async_test_home_assistant,
@@ -18,7 +19,10 @@ from custom_components.ai_automation_suggester.const import DOMAIN, CONF_PROVIDE
 async def test_async_setup_entry(expected_lingering_timers):
     """Test that the integration loads and creates sensors."""
     repo_root = Path(__file__).resolve().parents[1]
-    async with async_test_home_assistant(config_dir=str(repo_root)) as hass:
+    kwargs = {
+        ("storage_dir" if "storage_dir" in signature(async_test_home_assistant).parameters else "config_dir"): str(repo_root)
+    }
+    async with async_test_home_assistant(**kwargs) as hass:
         hass.data.pop(LOADER_CUSTOM, None)
         entry = MockConfigEntry(
             domain=DOMAIN,
