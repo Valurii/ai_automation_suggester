@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://www.buymeacoffee.com/fjoelnir" target="_blank">
-    <img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
-  </a>
+  <a href="https://www.buymeacoffee.com/fjoelnr" target="_blank">
+    <img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
+  </a>
 </p>
 
 # AI Automation Suggester
 
-[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/fjoelnir/ai_automation_suggester/hassfest.yaml?style=for-the-badge)]()
-[![HACS Validation](https://img.shields.io/github/actions/workflow/status/fjoelnir/ai_automation_suggester/validate.yaml?style=for-the-badge)]()
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/fjoelnir/ai_automation_suggester?style=for-the-badge)]()
+[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/fjoelnr/ai_automation_suggester/hassfest.yaml?style=for-the-badge)]()
+[![HACS Validation](https://img.shields.io/github/actions/workflow/status/fjoelnr/ai_automation_suggester/validate.yaml?style=for-the-badge)]()
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/fjoelnr/ai_automation_suggester?style=for-the-badge)]()
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)]()
 
 Inspired by the original project from ITSpecialist111.
@@ -419,7 +419,7 @@ This is a custom component developed independently. It is not affiliated with, e
 
 If you find this integration helpful and it saves you time and effort in automating your home, please consider supporting its development. Your support helps with maintenance, adding new features, and covering any potential costs associated with development and testing.
 
-[<img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">](https://www.buymeacoffee.com/ITSpecialist)
+[<img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">](https://www.buymeacoffee.com/fjoelnir)
 
 ---
 
