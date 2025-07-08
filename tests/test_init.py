@@ -4,6 +4,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import pytest
 from unittest.mock import patch
+from zoneinfo import ZoneInfo
 from homeassistant.config_entries import ConfigEntryState
 from homeassistant.loader import DATA_CUSTOM_COMPONENTS as LOADER_CUSTOM
 from inspect import signature
@@ -23,18 +24,19 @@ async def test_async_setup_entry(expected_lingering_timers):
     kwargs = {
         ("storage_dir" if "storage_dir" in signature(async_test_home_assistant).parameters else "config_dir"): str(repo_root)
     }
-    async with async_test_home_assistant(**kwargs) as hass:
-        with patch("homeassistant.core_config.report_usage"):
-            hass.config.set_time_zone("UTC")
-        hass.data.pop(LOADER_CUSTOM, None)
-        entry = MockConfigEntry(
-            domain=DOMAIN,
-            title="Test",
-            data={CONF_PROVIDER: "OpenAI"},
-            options={},
-            version=CONFIG_VERSION,
-        )
-        entry.add_to_hass(hass)
+    with patch("homeassistant.util.dt.get_time_zone", return_value=ZoneInfo("UTC")):
+        async with async_test_home_assistant(**kwargs) as hass:
+            with patch("homeassistant.core_config.report_usage"):
+                hass.config.set_time_zone("UTC")
+            hass.data.pop(LOADER_CUSTOM, None)
+            entry = MockConfigEntry(
+                domain=DOMAIN,
+                title="Test",
+                data={CONF_PROVIDER: "OpenAI"},
+                options={},
+                version=CONFIG_VERSION,
+            )
+            entry.add_to_hass(hass)
 
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
