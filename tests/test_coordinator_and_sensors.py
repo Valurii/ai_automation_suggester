@@ -5,6 +5,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 import asyncio
 from datetime import datetime, timedelta
 from unittest.mock import patch
+from zoneinfo import ZoneInfo
 
 import pytest
 from homeassistant.loader import DATA_CUSTOM_COMPONENTS as LOADER_CUSTOM
@@ -50,11 +51,12 @@ async def test_coordinator_budgets():
     kwargs = {
         ("storage_dir" if "storage_dir" in signature(async_test_home_assistant).parameters else "config_dir"): str(repo_root)
     }
-    async with async_test_home_assistant(**kwargs) as hass:
-        with patch("homeassistant.core_config.report_usage"):
-            hass.config.set_time_zone("UTC")
-        hass.data.pop(LOADER_CUSTOM, None)
-        entry = MockConfigEntry(
+    with patch("homeassistant.util.dt.get_time_zone", return_value=ZoneInfo("UTC")):
+        async with async_test_home_assistant(**kwargs) as hass:
+            with patch("homeassistant.core_config.report_usage"):
+                hass.config.set_time_zone("UTC")
+            hass.data.pop(LOADER_CUSTOM, None)
+            entry = MockConfigEntry(
             domain=DOMAIN,
             title="Test",
             data={
@@ -93,11 +95,12 @@ async def test_sensor_updates():
     kwargs = {
         ("storage_dir" if "storage_dir" in signature(async_test_home_assistant).parameters else "config_dir"): str(repo_root)
     }
-    async with async_test_home_assistant(**kwargs) as hass:
-        with patch("homeassistant.core_config.report_usage"):
-            hass.config.set_time_zone("UTC")
-        hass.data.pop(LOADER_CUSTOM, None)
-        entry = MockConfigEntry(
+    with patch("homeassistant.util.dt.get_time_zone", return_value=ZoneInfo("UTC")):
+        async with async_test_home_assistant(**kwargs) as hass:
+            with patch("homeassistant.core_config.report_usage"):
+                hass.config.set_time_zone("UTC")
+            hass.data.pop(LOADER_CUSTOM, None)
+            entry = MockConfigEntry(
             domain=DOMAIN,
             title="Test",
             data={CONF_PROVIDER: "OpenAI", CONF_OPENAI_MODEL: "model-a"},
