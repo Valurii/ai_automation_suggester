@@ -392,9 +392,18 @@ This project requires **Python 3.11**. Install dependencies with:
 pip install -r requirements.txt
 ```
 
-The test suite relies on `pytest-homeassistant-custom-component`. Run it with:
+The test suite relies on both `Home Assistant` and the
+`pytest-homeassistant-custom-component` plugin. Install them before running
+tests:
 
 ```bash
+pip install homeassistant pytest-homeassistant-custom-component
+```
+
+You can use the provided helper script to set everything up:
+
+```bash
+bash scripts/setup_tests.sh
 pytest -q
 ```
 
