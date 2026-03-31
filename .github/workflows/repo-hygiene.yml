@@ -1,0 +1,31 @@
+name: Repo Hygiene
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  docs-and-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -f docs/STATUS.md
+          test -f .github/CODEOWNERS
+          test -f custom_components/ai_automation_suggester/manifest.json
+
+      - name: Validate manifest repo links
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("custom_components/ai_automation_suggester/manifest.json").read_text(encoding="utf-8"))
+          assert "Valurii/ai_automation_suggester" in manifest["documentation"]
+          assert "Valurii/ai_automation_suggester/issues" in manifest["issue_tracker"]

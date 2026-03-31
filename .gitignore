@@ -4,6 +4,7 @@
 # Python caches
 __pycache__/
 .pytest_cache/
+.storage/
 
 # Build artifacts
 build/
