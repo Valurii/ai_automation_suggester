@@ -1,17 +1,20 @@
-<p align="center">
-  <a href="https://www.buymeacoffee.com/fjoelnr" target="_blank">
-    <img src="https://img.shields.io/badge/Buy&nbsp;me&nbsp;a&nbsp;coffee-Support&nbsp;Dev-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
-  </a>
-</p>
-
 # AI Automation Suggester
 
-[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/fjoelnr/ai_automation_suggester/hassfest.yaml?style=for-the-badge)]()
-[![HACS Validation](https://img.shields.io/github/actions/workflow/status/fjoelnr/ai_automation_suggester/validate.yaml?style=for-the-badge)]()
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/fjoelnr/ai_automation_suggester?style=for-the-badge)]()
+[![Validate with hassfest](https://img.shields.io/github/actions/workflow/status/Valurii/ai_automation_suggester/hassfest.yaml?style=for-the-badge)](https://github.com/Valurii/ai_automation_suggester/actions/workflows/hassfest.yaml)
+[![HACS Validation](https://img.shields.io/github/actions/workflow/status/Valurii/ai_automation_suggester/validate.yaml?style=for-the-badge)](https://github.com/Valurii/ai_automation_suggester/actions/workflows/validate.yaml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Valurii/ai_automation_suggester?style=for-the-badge)](https://github.com/Valurii/ai_automation_suggester/releases)
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)]()
 
-Inspired by the original project from ITSpecialist111.
+Public downstream Home Assistant integration maintained under `Valurii`.
+
+Inspired by the original project from `ITSpecialist111`, but maintained here as a review-first automation suggestion product for Home Assistant users who want AI support without direct unattended writes.
+
+## Maintainer Notes
+
+- Default branch model: `develop -> main`
+- Runtime package: `custom_components/ai_automation_suggester`
+- Repo guidance: `AGENTS.md`
+- Current repo state: `docs/STATUS.md`
 
 An **AI‑powered assistant** for Home Assistant that leverages large language models to understand your unique smart home environment – your entities, areas, devices, **and** existing automations. It proposes intelligent, actionable YAML suggestions tailored to your specific setup, helping you unlock your home's full potential.
 
@@ -147,6 +150,15 @@ Leveraging the AI Automation Suggester provides several key benefits:
     ```
 3.  **Restart Home Assistant**.
 4.  Go to Settings → Devices & Services → **+ Add Integration** and search for `AI Automation Suggester`.
+
+---
+
+## Repository Layout
+
+- `custom_components/ai_automation_suggester/`: shipped Home Assistant integration
+- `tests/`: lightweight HA harness tests
+- `.github/workflows/`: HACS, hassfest, and repo hygiene checks
+- `docs/STATUS.md`: current maintainer status
 
 ---
 
